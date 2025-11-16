@@ -1,0 +1,74 @@
+[
+    {
+        "toyId": 45,
+        "toyName": "Stacking Rings",
+        "sellerName": "BrightTots",
+        "sellerEmail": "hello@brighttots.com",
+        "price": 12.99,
+        "rating": 4.8,
+        "availableQuantity": 140,
+        "description": "Colorful stacking rings to help toddlers learn balance and sequencing.",
+        "pictureURL": "https://picsum.photos/seed/toy45/400/400",
+        "subCategory": "Educational Toys"
+    },
+    {
+        "toyId": 46,
+        "toyName": "Glow-in-the-Dark Stars",
+        "sellerName": "NightSky Toys",
+        "sellerEmail": "info@nightskytoys.com",
+        "price": 9.99,
+        "rating": 4.6,
+        "availableQuantity": 160,
+        "description": "Peel and stick glow-in-the-dark star decals for the ceiling.",
+        "pictureURL": "https://picsum.photos/seed/toy46/400/400",
+        "subCategory": "Decorative Toys"
+    },
+    {
+        "toyId": 47,
+        "toyName": "Magnetic Building Rods",
+        "sellerName": "MagnaBuild",
+        "sellerEmail": "support@magnabuild.com",
+        "price": 44.0,
+        "rating": 4.7,
+        "availableQuantity": 70,
+        "description": "Magnetic rods and balls for creative building and STEM play.",
+        "pictureURL": "https://picsum.photos/seed/toy47/400/400",
+        "subCategory": "STEM Toys"
+    },
+    {
+        "toyId": 48,
+        "toyName": "Toy Tool Kit",
+        "sellerName": "FixItKids",
+        "sellerEmail": "support@fixitkids.com",
+        "price": 19.99,
+        "rating": 4.3,
+        "availableQuantity": 120,
+        "description": "A pretend-play tool kit with a hammer, screwdriver, and wrench.",
+        "pictureURL": "https://picsum.photos/seed/toy48/400/400",
+        "subCategory": "Pretend Play"
+    },
+    {
+        "toyId": 49,
+        "toyName": "Wooden Abacus",
+        "sellerName": "CountOnMe Toys",
+        "sellerEmail": "info@countonmetoys.com",
+        "price": 17.5,
+        "rating": 4.5,
+        "availableQuantity": 100,
+        "description": "A wooden abacus to help young children practice counting and arithmetic.",
+        "pictureURL": "https://picsum.photos/seed/toy49/400/400",
+        "subCategory": "Educational Toys"
+    },
+    {
+        "toyId": 50,
+        "toyName": "Bubble Blower Wand",
+        "sellerName": "BubbleFun",
+        "sellerEmail": "sales@bubblefun.com",
+        "price": 6.99,
+        "rating": 4.4,
+        "availableQuantity": 200,
+        "description": "A fun bubble wand for blowing large, beautiful bubbles.",
+        "pictureURL": "https://picsum.photos/seed/toy50/400/400",
+        "subCategory": "Outdoor Toys"
+    }
+]

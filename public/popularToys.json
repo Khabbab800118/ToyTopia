@@ -1,0 +1,110 @@
+[
+    {
+        "toyId": 1,
+        "toyName": "Lego Classic Bricks",
+        "sellerName": "Toys R Us Local",
+        "sellerEmail": "contact@toysruslocal.com",
+        "price": 49.99,
+        "rating": 4.7,
+        "availableQuantity": 75,
+        "description": "A timeless set of colorful Lego bricks that encourages creativity and problem-solving.",
+        "pictureURL": "https://picsum.photos/seed/toy1/400/400",
+        "subCategory": "Building Blocks"
+    },
+    {
+        "toyId": 2,
+        "toyName": "Hot Wheels Racing Car",
+        "sellerName": "Speedy Toys",
+        "sellerEmail": "info@speedytoys.com",
+        "price": 12.5,
+        "rating": 4.5,
+        "availableQuantity": 120,
+        "description": "A durable die-cast racing car for high-speed fun.",
+        "pictureURL": "https://picsum.photos/seed/toy2/400/400",
+        "subCategory": "Vehicles"
+    },
+    {
+        "toyId": 3,
+        "toyName": "Barbie Dream Doll",
+        "sellerName": "Doll House Store",
+        "sellerEmail": "support@dollhouse.com",
+        "price": 29.99,
+        "rating": 4.8,
+        "availableQuantity": 60,
+        "description": "A beautiful Barbie doll with stylish outfits.",
+        "pictureURL": "https://picsum.photos/seed/toy3/400/400",
+        "subCategory": "Dolls"
+    },
+    {
+        "toyId": 4,
+        "toyName": "Remote Control Helicopter",
+        "sellerName": "SkyFlyer",
+        "sellerEmail": "hello@skyflyer.com",
+        "price": 85.0,
+        "rating": 4.6,
+        "availableQuantity": 30,
+        "description": "A lightweight helicopter with stable flight control.",
+        "pictureURL": "https://picsum.photos/seed/toy4/400/400",
+        "subCategory": "Remote Control"
+    },
+    {
+        "toyId": 5,
+        "toyName": "Wooden Train Set",
+        "sellerName": "MiniTracks",
+        "sellerEmail": "contact@minitracks.com",
+        "price": 39.5,
+        "rating": 4.4,
+        "availableQuantity": 95,
+        "description": "Classic wooden train set to develop motor skills.",
+        "pictureURL": "https://picsum.photos/seed/toy5/400/400",
+        "subCategory": "Educational Toys"
+    },
+    {
+        "toyId": 6,
+        "toyName": "Action Hero Figure",
+        "sellerName": "HeroMart",
+        "sellerEmail": "store@heromart.com",
+        "price": 19.99,
+        "rating": 4.3,
+        "availableQuantity": 80,
+        "description": "A posable superhero figure with accessories.",
+        "pictureURL": "https://picsum.photos/seed/toy6/400/400",
+        "subCategory": "Action Figures"
+    },
+    {
+        "toyId": 7,
+        "toyName": "Puzzle Cube 3x3",
+        "sellerName": "BrainBoost",
+        "sellerEmail": "info@brainboost.com",
+        "price": 9.99,
+        "rating": 4.9,
+        "availableQuantity": 200,
+        "description": "A smooth-turning puzzle cube great for speed cubing.",
+        "pictureURL": "https://picsum.photos/seed/toy7/400/400",
+        "subCategory": "Puzzles"
+    },
+    {
+        "toyId": 8,
+        "toyName": "Kids Doctor Kit",
+        "sellerName": "PlayMed",
+        "sellerEmail": "contact@playmed.com",
+        "price": 24.99,
+        "rating": 4.2,
+        "availableQuantity": 110,
+        "description": "A fun role-play doctor set with tools.",
+        "pictureURL": "https://picsum.photos/seed/toy8/400/400",
+        "subCategory": "Pretend Play"
+    },
+    {
+        "toyId": 9,
+        "toyName": "Stuffed Teddy Bear",
+        "sellerName": "SoftHug Toys",
+        "sellerEmail": "support@softhug.com",
+        "price": 18.0,
+        "rating": 4.7,
+        "availableQuantity": 130,
+        "description": "A soft plush teddy bear perfect for cuddles.",
+        "pictureURL": "https://picsum.photos/seed/toy9/400/400",
+        "subCategory": "Soft Toys"
+    }
+]
