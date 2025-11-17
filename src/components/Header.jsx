@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { use } from 'react';
 import { FaHome } from 'react-icons/fa';
 import { NavLink, useNavigate } from 'react-router';
+import { AuthContext } from '../provider/AuthContext';
 
 const Header = () => {
 
+    const { user, logOut } = use(AuthContext)
     const navigator = useNavigate();
     const handleLoginBtn = () => {
         navigator("/auth/login");
+    }
+    const handleLogoutBtn = () => {
+        logOut()
+            .then(() => {
+                alert("Log Out Successful")
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
     return (
@@ -20,7 +31,7 @@ const Header = () => {
                 </NavLink>
             </div>
             <div className="navbar-end">
-                <button onClick={handleLoginBtn} className='bg-secondary px-4 py-1 rounded-2xl text-accent'>Log In</button>
+                {user ? <button onClick={handleLogoutBtn} className='bg-secondary px-4 py-1 rounded-2xl text-accent'>Log Out</button> : <button onClick={handleLoginBtn} className='bg-secondary px-4 py-1 rounded-2xl text-accent'>Log In</button>}
             </div>
         </div>
     );
