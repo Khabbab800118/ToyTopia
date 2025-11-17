@@ -13,7 +13,8 @@ const Login = () => {
         login(email, password)
             .then(result => {
                 const user = result.user;
-                setUser(user)
+                setUser(user);
+                alert("Log in successful")
             })
             .catch(error => {
                 console.log(error.messege);

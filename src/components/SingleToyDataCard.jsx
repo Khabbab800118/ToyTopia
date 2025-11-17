@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
+import { Link } from 'react-router';
 
 const SingleToyDataCard = ({ singleToyData }) => {
     return (
@@ -20,7 +21,7 @@ const SingleToyDataCard = ({ singleToyData }) => {
                             <span>pc  only</span>
                         </p>
                         <h1 className="text-2xl font-bold">{singleToyData.price} USD</h1>
-                        <button className="btn btn-primary">View More</button>
+                        <Link to={`/toy-details/${singleToyData.toyId}`} className="btn btn-primary">View More</Link>
                     </div>
                 </div>
             </div>

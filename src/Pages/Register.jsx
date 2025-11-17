@@ -16,6 +16,7 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 setUser(user);
+                alert("Log in successful")
 
             })
             .catch(error => {

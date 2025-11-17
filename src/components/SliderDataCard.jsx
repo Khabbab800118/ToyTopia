@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
+import { Link } from 'react-router';
 
 const SliderDataCard = ({ singleSliderData }) => {
     return (
@@ -21,7 +22,7 @@ const SliderDataCard = ({ singleSliderData }) => {
                                 <span>pc  only</span>
                             </p>
                             <h1 className="text-5xl font-bold">{singleSliderData.price} USD</h1>
-                            <button className="btn btn-primary">View More</button>
+                            <Link to={`/toy-details/${singleSliderData.toyId}`} className="btn btn-primary">View More</Link>
                         </div>
                     </div>
                 </div>
