@@ -7,6 +7,7 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import ToyDetails from "../Pages/ToyDetails";
 import PrivateRoute from "../layouts/PrivateRoute";
+import Profile from "../Pages/Profile";
 
 
 const router = createBrowserRouter([
@@ -49,6 +50,14 @@ const router = createBrowserRouter([
             </PrivateRoute>
         ),
         loader: () => fetch("/allToys.json"),
+    },
+    {
+        path: "/profile",
+        element: (
+            <PrivateRoute>
+                <Profile></Profile>
+            </PrivateRoute>
+        ),
     },
     {
         path: "/*",

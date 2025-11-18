@@ -1,9 +1,12 @@
 import React, { use } from 'react';
 import { AuthContext } from '../provider/AuthContext';
-import { Navigate } from 'react-router';
+import { Navigate, useLocation } from 'react-router';
 
 const PrivateRoute = ({ children }) => {
     const { user, loading } = use(AuthContext);
+
+    const location = useLocation();
+
 
     if (loading) {
         return <div className='min-h-screen flex items-center justify-center'><span className="loading loading-spinner loading-xl "></span></div>;
@@ -11,7 +14,7 @@ const PrivateRoute = ({ children }) => {
     if (user) {
         return children;
     }
-    return <Navigate to="/auth/login"></Navigate>;
+    return <Navigate state={location.pathname} to="/auth/login"></Navigate>;
 };
 
 export default PrivateRoute;
