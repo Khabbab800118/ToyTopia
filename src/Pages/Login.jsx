@@ -1,13 +1,27 @@
-import React, { use, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
-import { AuthContext } from '../provider/AuthContext';
+import { auth, AuthContext, googleProvider } from '../provider/AuthContext';
+import { FaGoogle } from 'react-icons/fa';
+import { signInWithPopup } from 'firebase/auth';
 
 const Login = () => {
-    const { login, setUser } = use(AuthContext);
+    const { login, setUser } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
     const [error, setError] = useState('');
+    
 
+    const handleGoogleBtn = () => {
+        signInWithPopup(auth, googleProvider)
+            .then(result => {
+                const user = result.user;
+                setUser(user)
+                navigate(`${location.state ? location.state : "/"}`)
+            })
+            .catch(error => {
+                setError(error.message);
+            })
+    }
     const handleLoginBtn = e => {
         e.preventDefault();
         const form = e.target;
@@ -22,8 +36,6 @@ const Login = () => {
             .catch(error => {
                 setError(error.message);
             })
-
-
     }
 
     return (
@@ -39,12 +51,15 @@ const Login = () => {
                             {/* Password */}
                             <label className="label">Password</label>
                             <input required name='password' type="password" className="input" placeholder="Password" />
-                            {/* <div><a className="link link-hover">Forgot password?</a></div> */}
+                            <div><a className="link link-hover">Forgot password?</a></div>
                             <button type='submit' className="btn btn-neutral mt-4">Login</button>
                             <small className='text-center mt-5 text-red-800'>{error ? "Invalid Email or Password" : ""}</small>
                             <small className='text-center mt-5'>Don't have an account? <Link className='text-red-600' to={"/auth/register"}>Register</Link></small>
                         </fieldset>
                     </form>
+                    <div className='flex items-center justify-center'>
+                        <button onClick={handleGoogleBtn} className='btn btn-secondary px-5 py-1'> <FaGoogle className='text-2xl'></FaGoogle> <span className=' text-primary'>Log In With Google</span> </button>
+                    </div>
                 </div>
             </div>
         </div>

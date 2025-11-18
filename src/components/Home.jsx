@@ -13,14 +13,14 @@ const Home = () => {
 
     return (
         <div>
-            <h1 className='font-bold text-5xl text-center text-primary'>Popular Toys</h1>
+            <h1 className='font-bold text-5xl text-center text-primary my-5'>Popular Toys</h1>
             <div className='lg:grid lg:grid-cols-3 gap-3 p-4'>
                 {
                     popularToysData.map(singlePopularToyData => <PolpularDataCard key={singlePopularToyData.toyId} singlePopularToyData={singlePopularToyData}></PolpularDataCard>)
                 }
             </div>
             <div className='flex justify-center'>
-                <button onClick={handleShowAll} className='btn btn-primary w-fit'>Show All...</button>
+                <button onClick={handleShowAll} className='btn btn-primary w-fit my-5'>Show All...</button>
             </div>
         </div>
     );

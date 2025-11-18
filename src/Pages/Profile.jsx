@@ -1,11 +1,11 @@
 import React, { use } from 'react';
 import { AuthContext } from '../provider/AuthContext';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const Profile = () => {
 
     const { user, setUser, updateUser } = use(AuthContext);
-    console.log(user);
 
     const photoURL = user?.photoURL || null;
     const displayName = user?.displayName || user?.email || "Guest";
@@ -22,6 +22,7 @@ const Profile = () => {
         })
             .then(() => {
                 setUser({ ...user, displayName: name, photoURL: photo });
+                form.reset();
             })
             .catch(error => {
                 console.log(error);
@@ -58,6 +59,9 @@ const Profile = () => {
                     </div>
                 </div>
             </main>
+            <footer>
+                <Footer></Footer>
+            </footer>
         </div>
     );
 };

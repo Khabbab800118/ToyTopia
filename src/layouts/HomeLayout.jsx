@@ -2,6 +2,7 @@ import React from 'react';
 import { Outlet, useLoaderData } from 'react-router';
 import Header from '../components/Header';
 import Drawer from '../components/Drawer';
+import Footer from '../components/Footer';
 
 const HomeLayout = () => {
     const sliderData = useLoaderData();
@@ -22,7 +23,7 @@ const HomeLayout = () => {
                 </section>
             </main>
             <footer>
-
+                <Footer></Footer>
             </footer>
         </div>
     );

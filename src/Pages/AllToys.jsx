@@ -2,10 +2,10 @@ import React from 'react';
 import { useLoaderData } from 'react-router';
 import Header from '../components/Header';
 import SingleToyDataCard from '../components/SingleToyDataCard';
+import Footer from '../components/Footer';
 
 const AllToys = () => {
     const allToysData = useLoaderData();
-    console.log(allToysData);
 
     return (
         <div>
@@ -20,6 +20,9 @@ const AllToys = () => {
                     }
                 </div>
             </main>
+            <footer>
+                <Footer></Footer>
+            </footer>
         </div>
     );
 };

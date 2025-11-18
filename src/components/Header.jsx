@@ -7,6 +7,9 @@ const Header = () => {
 
     const { user, logOut } = use(AuthContext);
 
+
+    const photoURL = user?.photoURL || null;
+    const displayName = user?.displayName || user?.email || "Guest";
     const navigator = useNavigate();
     const handleLoginBtn = () => {
         navigator("/auth/login");
@@ -41,6 +44,19 @@ const Header = () => {
             <div className="navbar-end">
                 {user ?
                     <div className='flex lg:flex-row flex-col gap-2'>
+                        <div className="relative group w-fit">
+                            <img
+                                className='w-12 rounded-full cursor-pointer'
+                                src={photoURL}
+                                alt={displayName}
+                            />
+                            <span className="absolute left-1/2 -translate-x-1/2 top-18
+                                       bg-black text-white text-xs px-2 py-1 rounded
+                                      opacity-0 group-hover:opacity-100
+                                      transition-opacity duration-200 whitespace-nowrap">
+                                {displayName}
+                            </span>
+                        </div>
                         <button className='bg-secondary px-8 py-1 rounded-2xl text-accent font-semibold' onClick={handleProfile}> My Profile </button>
                         <button onClick={handleLogoutBtn} className='bg-secondary px-8 py-1 rounded-2xl text-accent font-semibold'>Log Out</button>
                     </div> :
