@@ -2,6 +2,7 @@ import React, { use } from 'react';
 import { FaHome } from 'react-icons/fa';
 import { NavLink, useNavigate } from 'react-router';
 import { AuthContext } from '../provider/AuthContext';
+import { showSuccess } from './Alert';
 
 const Header = () => {
 
@@ -21,15 +22,18 @@ const Header = () => {
         navigator("/profile");
     }
 
-    const handleLogoutBtn = () => {
-        logOut()
-            .then(() => {
-                navigator("/");
-            })
-            .catch(error => {
-                console.log(error);
-            })
-    }
+    const handleLogoutBtn = async () => {
+        try {
+            await logOut();
+
+            showSuccess("Logged Out Successfully");
+
+            navigator("/");
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     return (
         <div className="navbar bg-primary lg:px-10 lg:py-5 text-base-100">
             <div className="navbar-start w-1/3">

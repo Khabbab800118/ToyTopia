@@ -2,6 +2,7 @@ import React, { use } from 'react';
 import { AuthContext } from '../provider/AuthContext';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { showSuccess } from '../components/Alert';
 
 const Profile = () => {
 
@@ -16,19 +17,24 @@ const Profile = () => {
         const form = e.target;
         const name = form.name.value;
         const photo = form.photo.value;
+
         updateUser({
             displayName: name,
             photoURL: photo
         })
             .then(() => {
                 setUser({ ...user, displayName: name, photoURL: photo });
+
+                showSuccess("Profile Updated Successfully");
+
                 form.reset();
             })
             .catch(error => {
                 console.log(error);
                 setUser(user);
-            })
-    }
+            });
+    };
+
     return (
         <div>
             <header>

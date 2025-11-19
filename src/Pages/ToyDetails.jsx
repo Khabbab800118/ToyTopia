@@ -2,15 +2,17 @@ import React from 'react';
 import { FaStar } from 'react-icons/fa';
 import { useLoaderData, useParams } from 'react-router';
 import Header from '../components/Header';
+import { showSuccess } from '../components/Alert';
 
 const ToyDetails = () => {
 
     const { id } = useParams();
     const allToysData = useLoaderData();
     const toy = allToysData.find(data => data.toyId == id)
-    const handleSubmitBtn = e => {
+    const handleSubmitBtn = async (e) => {
         e.preventDefault();
-        alert('Form submitted successfully')
+        await showSuccess("Form Submitted Successfully");
+        e.target.reset();
     }
 
     return (

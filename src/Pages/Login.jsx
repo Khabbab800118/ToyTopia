@@ -3,40 +3,55 @@ import { Link, useLocation, useNavigate } from 'react-router';
 import { auth, AuthContext, googleProvider } from '../provider/AuthContext';
 import { FaGoogle } from 'react-icons/fa';
 import { signInWithPopup } from 'firebase/auth';
+import { showSuccess } from "../components/Alert";
+
 
 const Login = () => {
     const { login, setUser } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
     const [error, setError] = useState('');
-    
 
-    const handleGoogleBtn = () => {
-        signInWithPopup(auth, googleProvider)
-            .then(result => {
-                const user = result.user;
-                setUser(user)
-                navigate(`${location.state ? location.state : "/"}`)
-            })
-            .catch(error => {
-                setError(error.message);
-            })
-    }
-    const handleLoginBtn = e => {
+
+    const handleGoogleBtn = async () => {
+        try {
+            const result = await signInWithPopup(auth, googleProvider);
+            const user = result.user;
+            setUser(user);
+
+            // Show success alert
+            await showSuccess("Login Successful!", "Logged in with Google!");
+
+            // Navigate after user clicks OK
+            navigate(location.state ? location.state : "/");
+
+        } catch (error) {
+            setError(error.message);
+        }
+    };
+
+    const handleLoginBtn = async (e) => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        login(email, password)
-            .then(result => {
-                const user = result.user;
-                setUser(user);
-                navigate(`${location.state ? location.state : "/"}`)
-            })
-            .catch(error => {
-                setError(error.message);
-            })
-    }
+
+        try {
+            const result = await login(email, password);
+            const user = result.user;
+            setUser(user);
+
+            // Show success alert
+            await showSuccess("Login Successful!", "Welcome back!");
+
+            // Navigate after user clicks OK
+            navigate(location.state ? location.state : "/");
+
+        } catch (error) {
+            setError(error.message);
+        }
+    };
+
 
     return (
         <div className="hero bg-base-200 min-h-screen">
