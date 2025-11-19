@@ -2,6 +2,7 @@ import { FaStar } from "react-icons/fa";
 import { useLoaderData, useParams } from "react-router";
 import Header from "../components/Header";
 import { showSuccess } from "../components/Alert";
+import Footer from "../components/Footer";
 
 const ToyDetails = () => {
   const { id } = useParams();
@@ -48,9 +49,19 @@ const ToyDetails = () => {
             <form onSubmit={handleSubmitBtn} className="card-body">
               <fieldset className="fieldset">
                 <label className="label">Name</label>
-                <input type="text" className="input" placeholder="Name" />
+                <input
+                  required
+                  type="text"
+                  className="input"
+                  placeholder="Name"
+                />
                 <label className="label">Email</label>
-                <input type="email" className="input" placeholder="Email" />
+                <input
+                  required
+                  type="email"
+                  className="input"
+                  placeholder="Email"
+                />
                 <div className="pl-25">
                   <button type="submit" className="btn btn-primary w-fit">
                     Try Now
@@ -61,6 +72,9 @@ const ToyDetails = () => {
           </div>
         </div>
       </main>
+      <footer>
+        <Footer></Footer>
+      </footer>
     </div>
   );
 };
