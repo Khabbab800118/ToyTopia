@@ -9,17 +9,20 @@ import ToyDetails from "../Pages/ToyDetails";
 import PrivateRoute from "../layouts/PrivateRoute";
 import Profile from "../Pages/Profile";
 import ForgotPassword from "../Pages/ForgotPassword";
+import Loading from "../Pages/Loading";
 
 const router = createBrowserRouter([
   {
     path: "/",
     Component: HomeLayout,
     loader: () => fetch("/slider.json"),
+    hydrateFallbackElement: <Loading></Loading>,
     children: [
       {
         index: true,
         Component: Home,
         loader: () => fetch("/popularToys.json"),
+        hydrateFallbackElement: <Loading></Loading>,
       },
     ],
   },
@@ -45,6 +48,7 @@ const router = createBrowserRouter([
     path: "/toys",
     Component: AllToys,
     loader: () => fetch("/allToys.json"),
+    hydrateFallbackElement: <Loading></Loading>,
   },
   {
     path: "/toy-details/:id",
@@ -54,6 +58,7 @@ const router = createBrowserRouter([
       </PrivateRoute>
     ),
     loader: () => fetch("/allToys.json"),
+    hydrateFallbackElement: <Loading></Loading>,
   },
   {
     path: "/profile",
