@@ -76,7 +76,9 @@ const Login = () => {
                 placeholder="Password"
               />
               <div>
-                <a className="link link-hover">Forgot password?</a>
+                <Link to="/auth/forgotPassword" className="link link-hover">
+                  Forgot password?
+                </Link>
               </div>
               <button type="submit" className="btn btn-neutral mt-4">
                 Login
